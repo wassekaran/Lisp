@@ -60,6 +60,10 @@ var Evaluator = function Evaluator(ast) {
     
     this.interpret = function() {
         var env = new Env(global_env);
+        env.set("pi",{type: "NUMBER",value: Math.PI});
+        
+        //env.set("sine",{type: "NUMBER",value: 90});
+        //env.set("sine","(defun sine() (981)");
         
         try {
             for(i=0;i<_ast.length;i++) {
