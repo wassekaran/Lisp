@@ -1,0 +1,337 @@
+<html>
+	<head>
+		<title>LISP : An Interpreted Programming Language</title>
+	</head>
+	<body>
+		<h1>LISP : An Interpreted Programming Language</h1>
+		<br>
+
+		<div id="console">
+		
+		</div>
+<!--
+(   
+    define 
+    last 
+    (e) 
+    
+    (
+        cond 
+        ((atom e) nil) ((null (cdr e)) (car e)) 
+        (t (last (cdr e)))))
+-->
+<script type="text/lisp"> 
+
+
+#(writeln "Num1 == 2")    
+ 
+#(defun cadr (x) (car (cdr x)) )  
+  
+#(defvar l1 (quote (11 22 33 44 55)))
+
+#(writeln "L1: " (cadr l1))   
+
+#(defvar point (quote (90 45)) )
+
+#(writeln "Point: " (cons point (quote (30))))
+
+
+(
+    defun
+
+    print_day
+
+    (day)
+
+    (
+        cond
+        (== day 7) (writeln "Day is Sunday")
+        (== day 1) (writeln "Day is Monday")
+        (== day 2) (writeln "Day is Tuesday")
+        (== day 3) (writeln "Day is Wednesday")
+        (== day 4) (writeln "Day is Thrusday")
+        (== day 5) (writeln "Day is Friday")
+        (== day 6) (writeln "Day is Saturday")
+        (default ) (writeln "Invalid Day")
+    )
+)
+
+#(print_day 6)
+
+(
+    defun 
+    largest_2
+    (num1 num2)
+    (
+        cond
+        (== num1 num2) (writeln num1 " = " num2)
+        (> num1 num2)  (writeln num1 " > " num2)
+        (< num1 num2)  (writeln num1 " < " num2)
+    )
+)
+
+#(largest_2 95 97)
+
+(
+    defun 
+    largest_3
+    (num1 num2 num3)
+    (
+        cond
+        (&& (>= num1 num2) (>= num1 num3)  ) (writeln num1 " is largest of all")
+        (&& (>= num2 num1) (>= num2 num3)  ) (writeln num2 " is largest of all")
+        (default)                            (writeln num3 " is largest of all")
+    )
+)
+
+(largest_3 223 198 98)
+
+
+
+
+
+
+
+
+
+
+
+(defvar num1 1)
+(defun sq (x) (* x x))
+(defun cb (x) (* x (sq x)))
+
+(writeln "SQ: " (sq 8))
+(writeln "SQ: " (sq (cb 4))  )
+
+
+
+
+
+#(
+#	defun 
+#	
+#	fact 
+#	
+#	(num) 
+#
+#	(
+#		if
+#		(== num 0)
+#		1
+#		(* num (fact (- num 1)))
+#	) 
+#
+#)
+
+#(
+#	defun 
+#	
+#	fib 
+#	
+#	(num) 
+#
+#	(
+#		if
+#		(< num 2)
+#		1
+#		(+ (fib (- num 1)) (fib (- num 2)))
+#	) 
+#
+#)
+
+
+#(writeln "Fact   6: " (fact (+ 3 3) ) )
+#(writeln "Fib   10: " (fib  10))
+
+#(
+#    defun
+#    inc
+#    (num)
+#    (+ num 1)
+#)
+#(defvar n1 4)
+#(writeln "Num: " n1)
+#(= n1 (inc n1))
+#(writeln "Num: " n1)
+
+
+
+#(
+#    defun 
+#    
+#    gcd 
+#    
+#    (a b)
+#    
+#    (
+#        if (== b 0)
+#        a
+#        (gcd b (% a b))
+#    )
+#)
+
+
+#(defvar num1 206)
+#(defvar num2 40)
+#(writeln "GCD: " (gcd num1 num2))
+
+
+
+
+
+
+#(defvar radius 6)
+#(defvar area)
+#(= area (* 3.14 (* radius radius)))
+#(writeln "Radius: " radius " Area: " area)
+
+
+#(defvar num1 45)
+#(defvar num2 (* 5 5))
+#(defvar num3)
+
+#(= num2 9)
+#(writeln "25 * 25: " (* num2 num2))
+
+
+#(defvar radius 9)
+#(defvar l1 (quote (11 22 33)))
+#(defvar l2 (quote (44 55 66)))
+#(defvar l3 (cons l1 l2 ))
+#(defvar l4 (cons (cons l1 l2 ) (quote (77 88 99)) ))
+#(defvar l5 (cdr (cdr (car l4))))
+
+#(writeln "L1: " l1 )
+#(writeln "L2: " l2 )
+
+#(writeln "L5 :" l5 )
+
+
+
+#(writeln "Cond : "  (== (% 19 2) 0 ) )
+
+
+#(
+#
+#    if
+#    (== (% 19 2) 0)
+#    (block (writeln "EVEN") (writeln "EVEN EVEN"))
+#    (block (writeln "ODD") (writeln "ODD ODD"))
+#
+#)
+
+
+#(writeln "Square 16: " (sq (+ 8 8)) )
+#(writeln "Cube 16: " (cube (+ 8 8)) )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#(writeln "Sum: " (+ (* 3 3 ) (* 4 4) ) )
+#(writeln "Pro: " (+ (* 3 3 ) (* 4 4) ) )
+
+#(writeln "Sum: " (+ 9 8))
+    
+#(writeln "Product: " (* 9 8))
+
+#(writeln "car: " (car (car (quote ( ((98 7) 22) 8 6) )) ) )
+#(writeln "car: " (car (car (car (quote ( ( (986) 16) 8 6) )) ) ) )
+
+#(writeln "car: " (car (9 8 6) )  ) #Error: Symbol required
+
+#(writeln "car: " (car (+ 9 8 6)  )  ) #car: nil
+#(writeln "car: " (car (quote (+ 9 8 6) )  )  ) #car: +
+
+#(writeln  "cdr: " 
+#    
+#            (
+#                quote
+#                (  
+#                    (11 (22 33) 14 (99 98)) 
+#                    (44 55 66) 
+#                    (77 88 99)  
+#                )
+#
+#           )
+#)
+
+#(writeln "cdr: " (cdr (quote (+ ) ) )  ) #car: nil
+
+
+#(writeln "cons: " (cons 78 12) ) )
+#(writeln "cons: " (cons (quote (78)) (quote ()) ) )
+
+#(writeln "cons: " 
+#(
+#cdr
+#
+#(cons (quote (78)) (quote (9)) ) 
+#(quote (1 2 3 4))
+#)
+#)
+
+
+
+
+
+
+
+
+
+
+</script>
+
+		
+        <script type="text/javascript" src="js/helpers.js"></script>		
+		
+		<script type="text/javascript" src="classes/Lexer.js"></script>
+		<script type="text/javascript" src="classes/Parser.js"></script>
+		<script type="text/javascript" src="classes/Evaluator.js"></script>
+		
+        
+        <!--Main Eval Files..... -->
+        <script type="text/javascript" src="classes/eval_io.js"></script>
+        <script type="text/javascript" src="classes/eval_list.js"></script>
+        <script type="text/javascript" src="classes/eval_func_call.js"></script>
+        <script type="text/javascript" src="classes/eval_defun.js"></script>
+        <script type="text/javascript" src="classes/eval_ds_lists.js"></script>
+        <script type="text/javascript" src="classes/eval_expressions.js"></script>
+        <script type="text/javascript" src="classes/eval_controls.js"></script>
+        <script type="text/javascript" src="classes/eval_core.js"></script>
+		
+        
+        
+        
+        
+        
+        
+        
+        
+		<script type="text/javascript" src="js/main.js"></script>
+		
+	</body>
+</html>

@@ -1,0 +1,88 @@
+
+Class
+	->Token
+	->Lexer
+	->Parser
+	->Env
+	->Evaluator
+
+--------------------------------------
+Program -> Lexer     -> Tokens
+Tokens  -> Parser    -> AST
+AST     -> Evaluator -> Output
+--------------------------------------	
+
+Program: (+ (* 3 3) (* 4 4) ) (+ 3 4)
+Output: 25
+
+BreakDown:
+
+Program:  (+ (* 3 3) (* 4 4) )
+
+Tokens -> 
+		[
+			{ type: "DELIMETER" , value: "(" },
+			{ type: "DELIMETER" , value: "+" },
+			{ type: "DELIMETER" , value: "(" },
+			{ type: "SYMBOL"    , value: "*" },
+			{ type: "NUMBER"    , value: "3" },
+			{ type: "NUMBER"    , value: "3" },
+			{ type: "DELIMETER" , value: ")" },			
+			{ type: "DELIMETER" , value: "(" },
+			{ type: "SYMBOL"    , value: "*" },
+			{ type: "NUMBER"    , value: "4" },
+			{ type: "NUMBER"    , value: "4" },
+			{ type: "DELIMETER" , value: ")" },
+			{ type: "DELIMETER" , value: ")" },
+			{ type: "DELIMETER" , value: "(" },
+			{ type: "SYMBOL"    , value: "+" },
+			{ type: "NUMBER"    , value: "3" },
+			{ type: "NUMBER"    , value: "4" },
+			{ type: "DELIMETER" , value: ")" },			
+			{ type: "EOT" 		, value: "NULL" },
+		]
+AST ->
+		[
+			[
+				{ type: "DELIMETER" , value: "+" },
+				
+				[
+					{ type: "SYMBOL"    , value: "*" },
+					{ type: "NUMBER"    , value: "3" },
+					{ type: "NUMBER"    , value: "3" },
+				],	
+				
+				[
+					{ type: "SYMBOL"    , value: "*" },
+					{ type: "NUMBER"    , value: "4" },
+					{ type: "NUMBER"    , value: "4" },
+				],
+			],
+			[
+				{ type: "SYMBOL"    , value: "+" },
+				{ type: "NUMBER"    , value: "3" },
+				{ type: "NUMBER"    , value: "4" },
+			],
+		]
+
+OUTPUT:
+		[
+			[
+				{ type: "DELIMETER" , value: "+" },
+				{ type: "NUMBER"    , value: "9" },
+				{ type: "NUMBER"    , value: "16" },
+			],
+			[
+				{ type: "SYMBOL"    , value: "+" },
+				{ type: "NUMBER"    , value: "3" },
+				{ type: "NUMBER"    , value: "4" },
+			],
+		]
+		
+		[
+			{ type: "NUMBER"    , value: "25" },
+			{ type: "NUMBER"    , value: "7" },
+		]
+
+
+[13:16:03.821] [[{type:"SYMBOL", value:"+"}, [{type:"SYMBOL", value:"*"}, {type:"NUMBER", value:3}, {type:"NUMBER", value:3}], [{type:"SYMBOL", value:"*"}, {type:"NUMBER", value:4}, {type:"NUMBER", value:4}]], [{type:"SYMBOL", value:"+"}, {type:"NUMBER", value:3}, {type:"NUMBER", value:4}]] @ file:///C:/wamp/www/Archive/2018/JS/LISP/classes/Evaluator.js:59
