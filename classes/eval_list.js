@@ -16,6 +16,38 @@ Evaluator.prototype.eval_list = function(list,env) {
             case "default":
                 return {type: "STRING",value: "default"};
                 break;
+            case "break":
+                return {type: "STRING",value: "break"};
+                break;
+            case "continue":
+                return {type: "STRING",value: "continue"};
+                break;
+            case "sine":        
+            case "cos":        
+            case "tan":        
+            case "sqrt":        
+            case "max":        
+            case "min":        
+            case "sqrt":        
+            case "round":        
+            case "floor":        
+            case "ciel":        
+            case "abs":        
+            case "random":        
+            case "power":        
+            case "choose":        
+                ret = this.eval_maths(list,env);
+                break;
+            case "strlen":        
+            case "strrev":        
+            case "str_to_upper":        
+            case "str_to_lower":        
+            case "str_char_at":        
+            case "str_to_num":        
+            case "str_concat":        
+            case "substr":        
+                ret = this.eval_string(list,env);
+                break;
             case "==":        
             case "!=":        
             case ">=":        
@@ -33,6 +65,12 @@ Evaluator.prototype.eval_list = function(list,env) {
             case "/":       
             case "%":
                 ret = this.eval_arith(list,env);
+                break;
+            case "dotimes":
+                this.eval_dotimes(list,env);
+                break;
+            case "while":
+                this.eval_while(list,env);
                 break;
             case "if":
                 ret = this.eval_if(list,env);
@@ -97,6 +135,12 @@ Evaluator.prototype.eval_list = function(list,env) {
                     break;
                 case "default":
                     return {type: "STRING",value: "default"};
+                    break;
+                case "break":
+                    return {type: "STRING",value: "break"};
+                    break;
+                case "continue":
+                    return {type: "STRING",value: "continue"};
                     break;
             }
 

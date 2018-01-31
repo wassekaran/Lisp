@@ -23,6 +23,184 @@
 <script type="text/lisp"> 
 
 
+
+(defvar sum 0)
+(defvar rem 0)
+(defvar num 123)
+
+(writeln "SOD: " sum)
+
+
+#(defvar sum 0)
+#(defvar n 0);
+
+#(
+#    while
+#    (<= n 9)
+#    (
+#        block
+#        (writeln "N: " n)
+#        (= n (+ n 1))
+#    )
+#
+#)
+
+#(writeln "Sum:" sum)
+
+
+#(defvar sum 0)
+#(defvar n 0);
+
+#(
+#    dotimes
+#    (n 0 10)
+#    (
+#        block
+#        (= sum (+ sum n))
+#    )
+#
+#)
+
+#(writeln "Sum:" sum)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#(defvar string "Hello World")
+#
+#(
+#    dotimes
+#    (n 0 (- (strlen string) 1) )
+#    (
+#        block
+#        (writeln "Ch: " (str_char_at n string))
+#    )
+#
+#)
+
+
+#(defvar num 18)
+#(defvar flag 0)
+
+#(
+#    dotimes
+#    (n 2 (- num 1))
+#    (
+#        block
+#        (
+#            if
+#            (== (% num n) 0)
+#            (= flag 1)
+#            (= flag 0)
+#        )
+#    )
+#    (break (== flag 1))        
+#
+#)
+
+#(writeln "Outer Flag: " flag)
+#
+#(
+#   if
+#   (== flag 1)
+#   (writeln num " is a not prime number")
+#   (writeln num " is a prime number")
+#    
+#)
+
+
+
+
+#(
+#
+#    dotimes
+#    (n 1 30)
+#    (
+#        block
+#        (   
+#            cond
+#            
+#            (&& (== 0 (% n 3)) (== 0 (% n 5))) (writeln n " -> FIZZ BUZZ")
+#            (== 0 (% n 3))      (writeln n " -> FIZZ")
+#            (== 0 (% n 5))      (writeln n " -> BUZZ")
+#            (default)           (writeln n " -> ")
+#        )
+#        
+#    )
+#)
+
+
+#(defvar sum 0)
+#(
+#    dotimes
+#    (n 1 5)
+#    (
+#        block
+#        (= sum (+ sum 2))
+#        (writeln "N: " sum)
+#    )
+#)
+
+
+#(defvar fname "John")
+#(defvar lname "Doe")
+#(defvar fullname (str_concat fname lname) )
+#(writeln "Welcome: " (substr fullname 1 2 ) )
+
+#(defvar num1 "98")
+#(writeln "Num1: " (* (str_to_num num1) 9) )
+#(writeln "Num1: " (* (str_to_num num1) 9) )
+
+
+
+
+#(defvar str "Hello World")
+#(writeln "strlen: " (strlen str))
+#(writeln "strrev: " (strrev str))
+#(writeln "strrev: " (str_to_upper str))
+#(writeln "strrev: " (str_to_lower "LOWER"))
+#(writeln "strrev: " (str_char_at 0 str))
+
+#(defvar num 4.7)
+#(writeln "Pi: " pi )
+#(writeln "Random: " (power 2 5) )
+#(writeln "Random: " (floor (* (random) 100)) )
+#(writeln "Cos: " (cos (+ 90 90)))
+#(writeln "Cos: " (tan (+ 90 90)))
+#(writeln "Max: " (max 1 2 3 4 5 6 7 10))
+#(writeln "Min: " (min 98 76 129))
+#(writeln "Choose: " (choose 11 22 33 44 55 66 77 88 99))
+
 #(writeln "Num1 == 2")    
  
 #(defun cadr (x) (car (cdr x)) )  
@@ -84,7 +262,7 @@
     )
 )
 
-(largest_3 223 198 98)
+#(largest_3 223 198 98)
 
 
 
@@ -96,12 +274,12 @@
 
 
 
-(defvar num1 1)
-(defun sq (x) (* x x))
-(defun cb (x) (* x (sq x)))
+#(defvar num1 1)
+#(defun sq (x) (* x x))
+#(defun cb (x) (* x (sq x)))
 
-(writeln "SQ: " (sq 8))
-(writeln "SQ: " (sq (cb 4))  )
+#(writeln "SQ: " (sq 8))
+#(writeln "SQ: " (sq (cb 4))  )
 
 
 
@@ -322,6 +500,9 @@
         <script type="text/javascript" src="classes/eval_expressions.js"></script>
         <script type="text/javascript" src="classes/eval_controls.js"></script>
         <script type="text/javascript" src="classes/eval_core.js"></script>
+        <script type="text/javascript" src="classes/eval_maths.js"></script>
+        <script type="text/javascript" src="classes/eval_string.js"></script>
+        <script type="text/javascript" src="classes/eval_loop.js"></script>
 		
         
         
