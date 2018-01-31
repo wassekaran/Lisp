@@ -22,6 +22,19 @@
 -->
 <script type="text/lisp"> 
 
+(defvar str "Hello World")
+(writeln "strlen: " (strlen str))
+(writeln "strrev: " (strrev str))
+
+#(defvar num 4.7)
+#(writeln "Pi: " pi )
+#(writeln "Random: " (power 2 5) )
+#(writeln "Random: " (floor (* (random) 100)) )
+#(writeln "Cos: " (cos (+ 90 90)))
+#(writeln "Cos: " (tan (+ 90 90)))
+#(writeln "Max: " (max 1 2 3 4 5 6 7 10))
+#(writeln "Min: " (min 98 76 129))
+#(writeln "Choose: " (choose 11 22 33 44 55 66 77 88 99))
 
 #(writeln "Num1 == 2")    
  
@@ -84,7 +97,7 @@
     )
 )
 
-(largest_3 223 198 98)
+#(largest_3 223 198 98)
 
 
 
@@ -96,12 +109,12 @@
 
 
 
-(defvar num1 1)
-(defun sq (x) (* x x))
-(defun cb (x) (* x (sq x)))
+#(defvar num1 1)
+#(defun sq (x) (* x x))
+#(defun cb (x) (* x (sq x)))
 
-(writeln "SQ: " (sq 8))
-(writeln "SQ: " (sq (cb 4))  )
+#(writeln "SQ: " (sq 8))
+#(writeln "SQ: " (sq (cb 4))  )
 
 
 
@@ -322,6 +335,8 @@
         <script type="text/javascript" src="classes/eval_expressions.js"></script>
         <script type="text/javascript" src="classes/eval_controls.js"></script>
         <script type="text/javascript" src="classes/eval_core.js"></script>
+        <script type="text/javascript" src="classes/eval_maths.js"></script>
+        <script type="text/javascript" src="classes/eval_string.js"></script>
 		
         
         

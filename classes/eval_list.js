@@ -16,6 +16,26 @@ Evaluator.prototype.eval_list = function(list,env) {
             case "default":
                 return {type: "STRING",value: "default"};
                 break;
+            case "sine":        
+            case "cos":        
+            case "tan":        
+            case "sqrt":        
+            case "max":        
+            case "min":        
+            case "sqrt":        
+            case "round":        
+            case "floor":        
+            case "ciel":        
+            case "abs":        
+            case "random":        
+            case "power":        
+            case "choose":        
+                ret = this.eval_maths(list,env);
+                break;
+            case "strlen":        
+            case "strrev":        
+                ret = this.eval_string(list,env);
+                break;
             case "==":        
             case "!=":        
             case ">=":        
